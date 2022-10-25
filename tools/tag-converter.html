@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" /><!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-150469501-1");
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
+    <title>标签转换器</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 960px;
+      }
+      .source,
+      .target {
+        width: 50%;
+        height: 500px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .source {
+        background-color: #84a3e8;
+      }
+      .target {
+        background-color: #C7E884;
+      }
+      .source textarea {
+        width: 100%;
+        height: 100%;
+      }
+      .result {
+        color: white;
+        margin: 10px auto 0 auto;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>标签转换器原型</h1>
+    <div class="container">
+      <div class="source">
+        <textarea id="source-text"></textarea>
+      </div><!-- remove space
+   --><div class="target">
+        <section id="target-text" class="result">
+            &nbsp;
+        </section>
+      </div>
+    </div>
+    <script src="../assets/Rx.min.js"></script>
+    <script src="./assets/tag-converter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-150469501-1");
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
+    <title>2D 变形 过渡 动画</title>
+    <!-- CSS 重置 -->
+    <!-- <link rel="stylesheet" href="../assets/reset.css" /> -->
+    <!-- 站点样式 -->
+    <link rel="stylesheet" href="../assets/site.css" />
+    <!-- 外联样式 -->
+    <link rel="stylesheet" href="../assets/main.css" />
+    <!-- 内联样式 -->
+    <style>
+      /* 当前页面的样式 */
+      /* 走马灯 */
+      #carousel > * {
+        box-sizing: border-box;
+      }
+      #carousel .sliders {
+        width: 400px;
+        height: 100px;
+        overflow: hidden;
+      }
+      #carousel .slider-wrapper {
+        width: 300%;
+        height: 100px;
+      }
+      #carousel .slider-wrapper { 
+        /* tta */
+        animation-name: sliding;
+        animation-duration: 10s;
+        animation-timing-function: ease;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+      }
+      #carousel .slider {
+        /* box */
+        width: 100px;
+        height: 100px;
+        /* bg */
+        background-color: #eee;
+        /* pos */
+        float: left;
+        /* text */
+        text-align: center;
+        line-height: 100px;
+        font-size: 24px;
+        font-weight: 600;
+        color: white;
+      }
+      #carousel .slider-1 {
+        background-color: rgba(255, 0, 0, 0.3);
+      }
+      #carousel .slider-2 {
+        background-color: rgba(0, 0, 255, 0.3);
+      }
+      #carousel .slider-3 {
+        background-color: rgba(0, 255, 0, 0.3);
+      }
+      #carousel .slider-4 {
+        background-color: rgba(0, 128, 0, 0.3);
+      }
+      #carousel .slider-5 {
+        background-color: rgba(0, 0, 128, 0.3);
+      }
+      /* 5个slide，就有 5个状态  */
+      @keyframes sliding {
+        0% {
+          transform: translateX(0);
+        }
+        20% {
+          transform: translateX(-100px);
+        }
+        40% {
+          transform: translateX(-200px);
+        }
+        60% {
+          transform: translateX(-300px);
+        }
+        80% {
+          transform: translateX(-400px);
+        }
+        100% {
+          transform: translateX(-500px);
+        }
+      }
+      /* /走马灯 */
+
+      /* 下拉菜单 动画 */
+      #drop-down ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      #drop-down .nav {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+      #drop-down .nav__item {
+        /* layout */
+        border: 1px solid #eee;
+        padding: 5px 15px;
+        /* pos */
+        display: inline-block;
+      }
+      #drop-down .down {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 4px solid black;
+        border-left: solid transparent;
+        border-right: solid transparent;
+        border-bottom: solid transparent;
+      }
+      #drop-down .drop-down {
+        /* layout */
+        width: 400px;
+        max-height: 0;
+        /* pos */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        overflow: hidden;
+        /* tta */
+        transform: translateY(1px);
+      }
+      #drop-down .nav__item:hover {
+        color: pink;
+      }
+      #drop-down .nav__item:hover .drop-down {
+        max-height: 1000px;
+      }
+      #drop-down .drop-down {
+        /* tta */
+        transition: max-height .5s linear;
+      }
+      #drop-down .drop-down__item {
+        border: 1px solid #eee;
+        padding: 20px;
+        background-color: #fff;
+        color: #000;
+      }
+      #drop-down .drop-down__item h3 {
+        padding-bottom: 15px;
+        border-bottom: 1px dotted #eee;
+      }
+      /* /下拉菜单 动画 */
+    </style>
+  </head>
+  <body>
+    <article id="carousel" class="fan-sub">
+      <h2 class="fan-sub__title">
+        走马灯
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div class="carousel clearfix">
+          <div class="sliders">
+            <div class="slider-wrapper">
+              <div class="slider slider-1">滑块 1</div>
+              <div class="slider slider-2">滑块 2</div>
+              <div class="slider slider-3">滑块 3</div>
+              <div class="slider slider-4">滑块 4</div>
+              <div class="slider slider-5">滑块 5</div>
+              <div class="slider slider-1">滑块 1</div>
+              <div class="slider slider-2">滑块 2</div>
+              <div class="slider slider-3">滑块 3</div>
+              <div class="slider slider-4">滑块 4</div>
+              <div class="slider slider-5">滑块 5</div>
+            </div>
+          </div>
+          <div class="controls"></div>
+        </div>
+      </section>
+    </article>
+
+    <article id="drop-down" class="fan-sub">
+      <h2 class="fan-sub__title">
+        下拉菜单 动画
+      </h2>
+
+      <section class="fan-sub__demo">
+        <ul class="nav">
+          <li class="nav__item">男装 <b class="down"></b>
+            <ul class="drop-down">
+              <li class="drop-down__item">
+                <h3>上衣</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, laboriosam, ipsum officia quo molestiae placeat deserunt molestias, quam iusto illo esse. Voluptas dolor totam quasi veritatis perferendis natus itaque inventore?</p>
+                <h3>裤子</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, laboriosam, ipsum officia quo molestiae placeat deserunt molestias, quam iusto illo esse. Voluptas dolor totam quasi veritatis perferendis natus itaque inventore?</p>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">女装 <b class="down"></b>
+            <ul class="drop-down">
+              <li class="drop-down__item">
+                <h3>大衣</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, laboriosam, ipsum officia quo molestiae placeat deserunt molestias, quam iusto illo esse. Voluptas dolor totam quasi veritatis perferendis natus itaque inventore?</p>
+                <h3>裙子</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, laboriosam, ipsum officia quo molestiae placeat deserunt molestias, quam iusto illo esse. Voluptas dolor totam quasi veritatis perferendis natus itaque inventore?</p>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">童装 <b class="down"></b>
+            <ul class="drop-down">
+              <li class="drop-down__item">
+                <h3>帽子</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, laboriosam, ipsum officia quo molestiae placeat deserunt molestias, quam iusto illo esse. Voluptas dolor totam quasi veritatis perferendis natus itaque inventore?</p>
+                <h3>手套</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, laboriosam, ipsum officia quo molestiae placeat deserunt molestias, quam iusto illo esse. Voluptas dolor totam quasi veritatis perferendis natus itaque inventore?</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </article>
+    </html>
+  </body>

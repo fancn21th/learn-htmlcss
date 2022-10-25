@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-150469501-1");
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
+    <title>Divisions and Spans</title>
+    <!-- CSS 重置 -->
+    <!-- <link rel="stylesheet" href="../assets/reset.css" /> -->
+    <!-- 站点样式 -->
+    <link rel="stylesheet" href="../assets/site.css" />
+    <!-- 外联样式 -->
+    <link rel="stylesheet" href="../assets/main.css" />
+    <!-- 内联样式 -->
+    <style>
+      /* 当前页面的样式 */
+      #divisions div {
+        border: 1px solid red;
+      }
+      #spans span {
+        border: 1px solid blue;
+      }
+      #spans-flow span {
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <article id="divisions" class="fan-sub">
+      <h2 class="fan-sub__title">
+        块级元素 DIV
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+          repellat non molestiae vitae veritatis. Sunt corporis pariatur aliquid
+          neque placeat eos itaque explicabo, autem accusantium blanditiis nemo
+          ea, animi eveniet!
+        </div>
+      </section>
+    </article>
+
+    <article id="spans" class="fan-sub">
+      <h2 class="fan-sub__title">
+        行内元素 SPAN
+      </h2>
+
+      <section class="fan-sub__demo">
+        <span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+          repellat non molestiae vitae veritatis. Sunt corporis pariatur aliquid
+          neque placeat eos itaque explicabo, autem accusantium blanditiis nemo
+          ea, animi eveniet!
+        </span>
+      </section>
+    </article>
+
+    <article id="spans-flow" class="fan-sub">
+      <h2 class="fan-sub__title">
+        行内元素 SPAN 排列
+      </h2>
+
+      <section class="fan-sub__demo">
+        <span>Lorem, ipsum.</span>
+        <span>Lorem, ipsum dolor.</span>
+        <span>Lorem ipsum dolor sit.</span>
+        <span>Lorem ipsum dolor sit amet.</span>
+      </section>
+    </article>
+  </body>
+</html>

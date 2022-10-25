@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-150469501-1");
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
+    <title>盒模型</title>
+    <!-- CSS 重置 -->
+    <!-- <link rel="stylesheet" href="../assets/reset.css" /> -->
+    <!-- 站点样式 -->
+    <link rel="stylesheet" href="../assets/site.css" />
+    <!-- 外联样式 -->
+    <link rel="stylesheet" href="../assets/main.css" />
+    <!-- 内联样式 -->
+    <style>
+      #block-element div {
+        border: 1px solid red;
+      }
+      #inline-element span {
+        border: 1px solid blue;
+      }
+      #inline-block-element span,
+      #inline-block-element-flow span {
+        border: 1px solid green;
+        display: inline-block;
+      }
+      #box-model div {
+        border: 20px solid #949599;
+        height: 100px;
+        margin: 20px;
+        padding: 20px;
+        width: 400px;
+      }
+      #box-model-size div {
+        border: 6px solid #949599;
+        height: 100px;
+        margin: 20px;
+        padding: 20px;
+        width: 400px;
+      }
+      #box-model-size q {
+        display: block;
+      }
+      #inline-element-margin-padding span {
+        margin: 20px;
+        padding: 20px;
+      }
+      #margin-padding-background div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+      #margin-padding-background div div {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        padding: 20px;
+        background-color: green;
+      }
+      #border-style div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+      }
+      #border-style div:nth-of-type(1) {
+        border: 6px solid #949599;
+      }
+      #border-style div:nth-of-type(2) {
+        border: 6px dashed #949599;
+      }
+      #border-style div:nth-of-type(3) {
+        border: 6px dotted #949599;
+      }
+      #border-style div:nth-of-type(4) {
+        border: 6px double #949599;
+      }
+      #border-radius div:nth-of-type(1),
+      #border-radius div:nth-of-type(2),
+      #border-radius div:nth-of-type(3) {
+        background: #efefef;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        margin: 0 14px;
+        text-align: center;
+      }
+      #border-radius div:nth-of-type(1) {
+        border-radius: 5px;
+      }
+      #border-radius div:nth-of-type(2) {
+        border-radius: 50%;
+      }
+      #border-radius div:nth-of-type(3) {
+        border-radius: 15px 75px;
+      }
+    </style>
+  </head>
+  <body>
+    <article id="block-element" class="fan-sub">
+      <h2 class="fan-sub__title">
+        block element 块级元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere
+          doloribus sunt facilis excepturi accusamus odit, aspernatur tempore et
+          quaerat cum sequi neque, blanditiis maiores molestias! Dolorum,
+          libero? Aut, assumenda unde?
+        </div>
+      </section>
+    </article>
+
+    <article id="inline-element" class="fan-sub">
+      <h2 class="fan-sub__title">
+        inline element 行内元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          animi quisquam in minima mollitia aperiam sapiente delectus odit iure
+          veniam. Optio debitis dolorem veritatis laborum vitae quas, voluptatum
+          voluptatem consequatur.</span
+        >
+      </section>
+    </article>
+
+    <article id="inline-block-element" class="fan-sub">
+      <h2 class="fan-sub__title">
+        inline-block element 行内块级元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          animi quisquam in minima mollitia aperiam sapiente delectus odit iure
+          veniam. Optio debitis dolorem veritatis laborum vitae quas, voluptatum
+          voluptatem consequatur.</span
+        >
+      </section>
+    </article>
+
+    <article id="inline-block-element-flow" class="fan-sub">
+      <h2 class="fan-sub__title">
+        inline-block element flow 行内块级元素 排列
+      </h2>
+
+      <section class="fan-sub__demo">
+        <span>Lorem ipsum</span>
+        <span>Lorem ipsum </span>
+      </section>
+    </article>
+
+    <article id="box-model" class="fan-sub">
+      <h2 class="fan-sub__title">
+        box model 盒模型
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere
+          doloribus sunt facilis excepturi accusamus odit, aspernatur tempore et
+          quaerat cum sequi neque, blanditiis maiores molestias! Dolorum,
+          libero? Aut, assumenda unde?
+        </div>
+      </section>
+    </article>
+
+    <article id="box-model-size" class="fan-sub">
+      <h2 class="fan-sub__title">
+        box model size 盒模型的大小
+      </h2>
+
+      <section class="fan-sub__demo">
+        <q
+          >盒子的宽度 = margin-right + border-right + padding-right + width +
+          padding-left + border-left + margin-left</q
+        >
+        <q
+          >盒子的高度 = margin-top + border-top + padding-top + height +
+          padding-bottom + border-bottom + margin-bottom</q
+        >
+        <div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere
+          doloribus sunt facilis excepturi accusamus odit, aspernatur tempore et
+          quaerat cum sequi neque, blanditiis maiores molestias! Dolorum,
+          libero? Aut, assumenda unde?
+        </div>
+      </section>
+    </article>
+
+    <article id="inline-element-margin-padding" class="fan-sub">
+      <h2 class="fan-sub__title">
+        inline element margin & padding 行内元素 外间距和内间距
+      </h2>
+
+      <section class="fan-sub__demo">
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          animi quisquam in minima mollitia aperiam sapiente delectus odit iure
+          veniam. Optio debitis dolorem veritatis laborum vitae quas, voluptatum
+          voluptatem consequatur.</span
+        >
+      </section>
+    </article>
+
+    <article id="margin-padding-background" class="fan-sub">
+      <h2 class="fan-sub__title">
+        margin & padding background-color 外间距和内间距 的 背景色
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div>
+          <div></div>
+        </div>
+      </section>
+    </article>
+
+    <article id="border-style" class="fan-sub">
+      <h2 class="fan-sub__title">
+        border style 边框 样式
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div>solid</div>
+        <div>dashed</div>
+        <div>dotted</div>
+        <div>double</div>
+      </section>
+    </article>
+
+    <article id="border-radius" class="fan-sub fan-main-typeface">
+      <h2 class="fan-sub__title">
+        border radius 边框 圆角
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div>5px</div>
+        <div>50%</div>
+        <div>15px 75px</div>
+      </section>
+    </article>
+
+    <article id="foo" class="fan-sub">
+      <h2 class="fan-sub__title">
+        三角形
+      </h2>
+
+      <section class="fan-sub__demo">
+        <iframe
+          width="200"
+          height="100"
+          src="../cookbook/triangle.html"
+          frameborder="0"
+        ></iframe>
+      </section>
+    </article>
+  </body>
+</html>

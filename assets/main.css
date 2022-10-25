@@ -1,0 +1,29 @@
+/*
+  ========================================
+  Clearfix v1
+  refer to https://www.w3schools.com/howto/howto_css_clearfix.asp
+  ========================================
+*/
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*
+  ========================================
+  Clearfix v2
+  ========================================
+*/
+.clearfix-v2:before,
+.clearfix-v2:after {
+  content: "";
+  display: table;
+}
+.clearfix-v2:after {
+  clear: both;
+}
+.clearfix-v2 {
+  clear: both;
+  *zoom: 1;
+}

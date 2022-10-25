@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-150469501-1");
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
+    <title>布局</title>
+    <!-- CSS 重置 -->
+    <!-- <link rel="stylesheet" href="../assets/reset.css" /> -->
+    <!-- 站点样式 -->
+    <link rel="stylesheet" href="../assets/site.css" />
+    <!-- 外联样式 -->
+    <link rel="stylesheet" href="../assets/main.css" />
+    <!-- 内联样式 -->
+    <style>
+      /* 当前页面的样式 */
+      #layout-elements h4 code {
+      }
+      #layout-elements .inline-elements {
+      }
+      #layout-elements .inline-elements * {
+        line-height: 40px;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+      #layout-elements .inline-elements *::before,
+      #layout-elements .inline-elements *::after {
+        content: "";
+        display: table;
+      }
+      #layout-elements .block-elements * {
+        background-color: #eee;
+        border-radius: 5px;
+      }
+      /* contain-nested */
+      #contain-nested .son {
+        background-color: #abffa8;
+        border-radius: 5px;
+      }
+      #contain-nested .father {
+        padding: 0 1em 1em 1em;
+        border-radius: 5px;
+        background-color: #b7e899;
+      }
+      #contain-nested .grand-father {
+        padding: 0 1em 1em 1em;
+        background-color: #ebffb5;
+      }
+      #contain-nested .grand-father > span {
+        position: relative;
+        left: 1em;
+      }
+      /* positioning */
+      #positioning .container {
+        width: 300px;
+        height: 300px;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 15px;
+        position: relative;
+        overflow: hidden;
+      }
+      #positioning .title {
+        padding: 15px;
+        border-radius: 5px;
+        border-color: red;
+        border-style: double;
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 165, 0, 0.8);
+      }
+      /* 
+        这是一个复杂的 组合选择器
+        其包括:
+          1. 属性选择器
+          2. 伪类(状态)选择器
+          3. 兄弟元素选择器
+          4. 后代元素选择器
+       */
+      #positioning input[value="static"]:checked ~ .container .title {
+        position: static;
+      }
+      #positioning input[value="relative"]:checked ~ .container .title {
+        position: relative;
+        top: 5px;
+        left: 5px;
+      }
+      #positioning input[value="absolute"]:checked ~ .container .title {
+        position: absolute;
+      }
+      #positioning input[value="fixed"]:checked ~ .container .title {
+        position: fixed;
+        top: 5px;
+        left: 5px;
+      }
+      #positioning input[value="float"]:checked ~ .container .title {
+        float: left;
+        margin-right: 5px;
+      }
+      /* overlap */
+      #overlap .container {
+        /* 避免塌陷 */
+        height: 13em;
+        position: relative;
+      }
+      #overlap .layer1,
+      .layer2,
+      .layer3,
+      .layer4 {
+        width: 10em;
+        height: 10em;
+        border-radius: 5px;
+        position: absolute;
+      }
+      #overlap .layer1:hover,
+      .layer2:hover,
+      .layer3:hover,
+      .layer4:hover {
+        z-index: 1;
+      }
+      #overlap .layer1 {
+        background-color: #ffa8dd;
+        left: 0;
+        top: 0;
+      }
+      #overlap .layer2 {
+        background-color: #e8c599;
+        left: 1em;
+        top: 1em;
+      }
+      #overlap .layer3 {
+        background-color: #ebffb5;
+        left: 2em;
+        top: 2em;
+      }
+      #overlap .layer4 {
+        background-color: #87ffeb;
+        left: 3em;
+        top: 3em;
+      }
+      /* float-pitfall */
+      #float-pitfall .container {
+        border: 1px solid red;
+        border-radius: 5px;
+        margin-bottom: 100px;
+        background-color: #87ffeb;
+      }
+      #float-pitfall .container:hover {
+        /* 清除浮动陷阱 */
+        width: 100%;
+        overflow: auto;
+      }
+      #float-pitfall p {
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 5px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- layout-elements -->
+    <article id="layout-elements" class="fan-sub">
+      <h2 class="fan-sub__title">
+        布局的元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <h3>行内元素</h3>
+        <h4>
+          <code>&#60;img&#62;</code>
+          <code>&#60;b&#62;</code>
+          <code>&#60;i&#62;</code>
+        </h4>
+        <div class="inline-elements">
+          <img src="" alt="这是一张图片" />
+          <b>Lorem, ipsum.</b>
+          <i>Lorem, ipsum.</i>
+        </div>
+        <h3>块级元素</h3>
+        <h4>
+          <code>&#60;h6&#62;</code>
+          <code>&#60;p&#62;</code>
+          <code>&#60;ul/li&#62;</code>
+        </h4>
+        <div class="block-elements">
+          <h6>Lorem, ipsum.</h6>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+            assumenda asperiores nisi omnis ducimus, atque dolore amet
+            laudantium voluptatem incidunt architecto sunt dolor esse. Cumque
+            distinctio consequatur alias et suscipit?
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Fugit doloribus illum accusamus fuga.</li>
+            <li>Optio beatae velit sed atque!</li>
+            <li>Odit possimus iusto veritatis aspernatur.</li>
+            <li>Repellat neque possimus excepturi autem?</li>
+            <li>Officiis natus accusantium vel commodi!</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!-- contain-nested -->
+    <article id="contain-nested" class="fan-sub">
+      <h2 class="fan-sub__title">
+        包含与嵌套
+      </h2>
+
+      <section class="fan-sub__demo">
+        <h3>包含</h3>
+        <h4>
+          <code>&#60;div&#62;</code>
+          <code>&#60;div&#62;</code>
+          <code>&#60;/div&#62;</code>
+          <code>&#60;/div&#62;</code>
+        </h4>
+        <div class="contain">
+          <div class="father">
+            <span>父</span>
+            <div class="son">子</div>
+          </div>
+        </div>
+        <h3>嵌套</h3>
+        <h4>
+          <code>&#60;div&#62;</code>
+          <code>&#60;div&#62;</code>
+          <code>&#60;div&#62;</code>
+          <code>&#60;/div&#62;</code>
+          <code>&#60;/div&#62;</code>
+          <code>&#60;/div&#62;</code>
+        </h4>
+        <div class="contain">
+          <div class="grand-father">
+            <span>祖</span>
+            <div class="father">
+              <span>父</span>
+              <div class="son">子</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+    <!-- positioning -->
+    <article id="positioning" class="fan-sub">
+      <h2 class="fan-sub__title">
+        定位
+      </h2>
+
+      <section class="fan-sub__demo">
+        <input type="radio" name="position-type" value="static" checked />
+        普通
+        <input type="radio" name="position-type" value="relative" />
+        相对
+        <input type="radio" name="position-type" value="absolute" />
+        绝对
+        <input type="radio" name="position-type" value="fixed" />
+        固定
+        <input type="radio" name="position-type" value="float" />
+        浮动
+        <div class="container">
+          <div class="title" id="pos-title">
+            我的位置会随着 定位方式 的 改变 而 变化
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
+            quaerat a nemo ullam maiores labore assumenda nihil velit, nisi
+            doloribus unde aspernatur neque repellat, quae tenetur deserunt
+            saepe quas commodi delectus quibusdam eaque laborum! Delectus fugit
+            quia illo laboriosam doloribus eligendi, pariatur consequuntur
+            labore perspiciatis eos quasi dolores magnam facilis?
+          </p>
+        </div>
+      </section>
+    </article>
+    <!-- overlap -->
+    <article id="overlap" class="fan-sub">
+      <h2 class="fan-sub__title">
+        重叠 与 z-index
+      </h2>
+
+      <section class="fan-sub__demo">
+        <h3>移动到 1-4 层改变z-index</h3>
+        <div class="container">
+          <div class="layer1">第一层</div>
+          <div class="layer2">第二层</div>
+          <div class="layer3">第三层</div>
+          <div class="layer4">第四层</div>
+        </div>
+      </section>
+    </article>
+    <!--  float-pitfall -->
+    <article id="float-pitfall" class="fan-sub">
+      <h2 class="fan-sub__title">
+        浮动陷阱
+      </h2>
+
+      <section class="fan-sub__demo">
+        <h3>移动鼠标到 p 元素上 清除 浮动塌陷</h3>
+        <div class="container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia,
+            ratione!
+          </p>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>

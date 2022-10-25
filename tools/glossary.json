@@ -1,0 +1,74 @@
+[
+  {
+    "english": "HyperText Markup Language(HTML)",
+    "chinese": "超文本标记语言"
+  },
+  {
+    "english": "Tag",
+    "chinese": "标签"
+  },
+  {
+    "english": "Attribute",
+    "chinese": "属性"
+  },
+  {
+    "english": "Cascading Style Sheet(CSS)",
+    "chinese": "层叠样式表"
+  },
+  {
+    "english": "CSS Syntax",
+    "chinese": "CSS 语法"
+  },
+  {
+    "english": "Selector",
+    "chinese": "选择器"
+  },
+  {
+    "english": "Property",
+    "chinese": "属性"
+  },
+  {
+    "english": "Value",
+    "chinese": "值"
+  },
+  {
+    "english": "Box Model",
+    "chinese": "盒模型"
+  },
+  {
+    "english": "Margin",
+    "chinese": "外间距"
+  },
+  {
+    "english": "Padding",
+    "chinese": "内间距"
+  },
+  {
+    "english": "Border",
+    "chinese": "边框"
+  },
+  {
+    "english": "Width",
+    "chinese": "宽度"
+  },
+  {
+    "english": "Height",
+    "chinese": "高度"
+  },
+  {
+    "english": "Relative",
+    "chinese": "相对"
+  },
+  {
+    "english": "Absolute",
+    "chinese": "绝对"
+  },
+  {
+    "english": "Inline",
+    "chinese": "行内"
+  },
+  {
+    "english": "Block",
+    "chinese": "块级"
+  }
+]

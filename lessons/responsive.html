@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-150469501-1");
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
+    <title>响应式</title>
+    <!-- CSS 重置 -->
+    <!-- <link rel="stylesheet" href="../assets/reset.css" /> -->
+    <!-- 站点样式 -->
+    <link rel="stylesheet" href="../assets/site.css" />
+    <!-- 外联样式 -->
+    <link rel="stylesheet" href="../assets/main.css" />
+    <!-- 内联样式 -->
+    <style>
+      /* viewport-size */
+      #viewport-size {
+        height: 500px;
+      }
+      #viewport-size .desktop,
+      #viewport-size .tablet,
+      #viewport-size .mobile {
+        transform: scale(0.5, 0.5);
+        transform-origin: 0 0;
+        border-radius: 15px;
+        position: relative;
+      }
+      #viewport-size .desktop {
+        width: 1280px;
+        height: 800px;
+        border: 10px dashed #ff937d;
+      }
+      #viewport-size .tablet {
+        width: 1024px;
+        height: 768px;
+        border: 10px dashed #e746e8;
+      }
+      #viewport-size .mobile {
+        width: 640px;
+        height: 960px;
+        border: 10px dashed #6f59ff;
+      }
+      #viewport-size span {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        font-size: 100px;
+      }
+      /* above-the-fold */
+      #above-the-fold .page,
+      #above-the-fold .content,
+      #above-the-fold .atf-content {
+        border-radius: 5px;
+      }
+      #above-the-fold .page {
+        width: 600px;
+        height: 300px;
+        border: 3px dashed #46b8e8;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 5px;
+        position: relative;
+      }
+      #above-the-fold .content {
+        width: 100%;
+        height: 600px;
+        border: 3px dashed #4dff98;
+      }
+      #above-the-fold .atf-content {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        background-color: #9be8de;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        /* 和父元素 padding 相同 */
+        margin: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <article id="viewport-size" class="fan-sub">
+      <h2 class="fan-sub__title">
+        不同分辨率的视窗大小
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div class="desktop">
+          <span>桌面 <br />1280 x 800</span>
+          <div class="tablet">
+            <span>平板 <br />1024 x 768</span>
+            <div class="mobile">
+              <span>手机 <br />640 * 960</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="above-the-fold" class="fan-sub">
+      <h2 class="fan-sub__title">
+        首屏 Above the fold
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div class="page">
+          <div class="content">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Temporibus quo blanditiis praesentium illo soluta obcaecati ea,
+              nulla dolore doloremque eveniet earum assumenda ipsum nisi
+              laboriosam rem, atque placeat ullam aperiam? Facere iure magnam
+              deserunt necessitatibus doloremque, recusandae culpa dolore,
+              maiores perferendis iusto cupiditate blanditiis facilis dicta
+              voluptatem, vero at impedit!
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Temporibus quo blanditiis praesentium illo soluta obcaecati ea,
+              nulla dolore doloremque eveniet earum assumenda ipsum nisi
+              laboriosam rem, atque placeat ullam aperiam? Facere iure magnam
+              deserunt necessitatibus doloremque, recusandae culpa dolore,
+              maiores perferendis iusto cupiditate blanditiis facilis dicta
+              voluptatem, vero at impedit!
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Temporibus quo blanditiis praesentium illo soluta obcaecati ea,
+              nulla dolore doloremque eveniet earum assumenda ipsum nisi
+              laboriosam rem, atque placeat ullam aperiam? Facere iure magnam
+              deserunt necessitatibus doloremque, recusandae culpa dolore,
+              maiores perferendis iusto cupiditate blanditiis facilis dicta
+              voluptatem, vero at impedit!
+            </p>
+          </div>
+          <div class="atf-content"></div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>

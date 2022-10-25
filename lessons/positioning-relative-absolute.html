@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-150469501-1");
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
+    <title>相对与绝对定位</title>
+    <!-- CSS 重置 -->
+    <!-- <link rel="stylesheet" href="../assets/reset.css" /> -->
+    <!-- 站点样式 -->
+    <link rel="stylesheet" href="../assets/site.css" />
+    <!-- 外联样式 -->
+    <link rel="stylesheet" href="../assets/main.css" />
+    <!-- 内联样式 -->
+    <style>
+      /* 当前页面的样式 */
+      /* 全选选择器 */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      /* 相对定位 与 块级 元素 */
+      #positioning-relative-block div {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 5px;
+      }
+      #positioning-relative-block code {
+        font-size: 10px;
+        text-align: center;
+        border-radius: 5px;
+        display: block;
+        height: 100%;
+        background: green;
+        color: white;
+        padding-top: 40px;
+      }
+      #positioning-relative-block .relative-offset {
+        /* 模拟原本文档流的位置 */
+        border: 3px dashed darkgrey;
+        border-radius: 5px;
+      }
+      #positioning-relative-block .relative-offset code {
+        position: relative;
+        left: 20px;
+        top: 20px;
+        /* 层叠背景色 */
+        background-color: red;
+        padding-top: 20px;
+      }
+
+      /* 相对定位 与 行内 元素 */
+      #positioning-relative-inline span code {
+        color: white;
+        background-color: green;
+      }
+      #positioning-relative-inline .relative-offset {
+        /* 模拟原本文档流的位置 */
+        border: 3px dashed darkgrey;
+      }
+      #positioning-relative-inline .relative-offset code {
+        position: relative;
+        left: 20px;
+        top: 20px;
+        /* 层叠背景色 */
+        background-color: red;
+      }
+      #positioning-relative-inline {
+        /* 因为偏移，调整和下一个副主题单元的间距 */
+        margin-bottom: 40px;
+      }
+
+      /* 绝对定位 与 块级 元素 */
+      #positioning-absolute-block .parent {
+        width: 50%;
+        height: 200px;
+        background-color: #efefef;
+        border-radius: 5px;
+        position: relative;
+      }
+      #positioning-absolute-block .absolute-offset,
+      #positioning-absolute-block .absolute-offset code {
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        border-radius: 5px;
+      }
+      #positioning-absolute-block .absolute-offset {
+        border: 3px dashed darkgrey;
+        top: 0;
+        right: 0;
+      }
+      #positioning-absolute-block .absolute-offset code {
+        display: block;
+        background-color: green;
+        color: white;
+        top: 20px;
+        right: 20px;
+        text-align: center;
+        padding-top: 20px;
+      }
+
+      /* 绝对定位 与 行内 元素 */
+      #positioning-absolute-inline .parent {
+        width: 50%;
+        height: 200px;
+        background-color: #efefef;
+        border-radius: 5px;
+        position: relative;
+      }
+      #positioning-absolute-inline .absolute-offset,
+      #positioning-absolute-inline .absolute-offset code {
+        position: absolute;
+        border-radius: 5px;
+        /* 绝对定位 显示模式设置无效 */
+        display: inline;
+      }
+      #positioning-absolute-inline .absolute-offset {
+        border: 3px dashed darkgrey;
+        top: 0;
+        right: 0;
+      }
+      #positioning-absolute-inline .absolute-offset code {
+        background-color: green;
+        color: white;
+        top: 20px;
+        right: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <article id="positioning-relative-block" class="fan-sub">
+      <h2 class="fan-sub__title">
+        相对定位 与 块级 元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div><code>&#60;div&#62;</code></div>
+        <div class="relative-offset">
+          <code
+            >&#60;div class <br />
+            ="relative-offset"&#62;</code
+          >
+        </div>
+        <div><code>&#60;div&#62;</code></div>
+      </section>
+    </article>
+
+    <article id="positioning-relative-inline" class="fan-sub">
+      <h2 class="fan-sub__title">
+        相对定位 与 行内 元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <span><code>&#60;span&#62;</code></span>
+        <span class="relative-offset">
+          <code>&#60;span class="relative-offset"&#62;</code>
+        </span>
+        <span><code>&#60;span&#62;</code></span>
+      </section>
+    </article>
+
+    <article id="positioning-absolute-block" class="fan-sub">
+      <h2 class="fan-sub__title">
+        绝对定位 与 块级 元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div class="parent">
+          <div class="absolute-offset">
+            <code
+              >&#60;div class <br />
+              ="absolute-offset"&#62;</code
+            >
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="positioning-absolute-inline" class="fan-sub">
+      <h2 class="fan-sub__title">
+        绝对定位 与 行内 元素
+      </h2>
+
+      <section class="fan-sub__demo">
+        <div class="parent">
+          <span class="absolute-offset">
+            <code
+              >&#60;span class <br />
+              ="absolute-offset"&#62;</code
+            >
+          </span>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
