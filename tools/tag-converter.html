@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" /><!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Global site tag (gtag.js) - Google Analytics - 开始 -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-150469501-1"
@@ -14,7 +15,7 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "UA-150469501-1");
+      // gtag("config", "UA-150469501-1");
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
     <title>标签转换器</title>
@@ -38,7 +39,7 @@
         background-color: #84a3e8;
       }
       .target {
-        background-color: #C7E884;
+        background-color: #c7e884;
       }
       .source textarea {
         width: 100%;
@@ -56,11 +57,11 @@
     <div class="container">
       <div class="source">
         <textarea id="source-text"></textarea>
-      </div><!-- remove space
-   --><div class="target">
-        <section id="target-text" class="result">
-            &nbsp;
-        </section>
+      </div>
+      <!-- remove space
+   -->
+      <div class="target">
+        <section id="target-text" class="result">&nbsp;</section>
       </div>
     </div>
     <script src="../assets/Rx.min.js"></script>

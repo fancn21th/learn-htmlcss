@@ -15,7 +15,7 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "UA-150469501-1");
+      // gtag("config", "UA-150469501-1");
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics - 结束 -->
     <title>术语表</title>
@@ -50,9 +50,13 @@
     <div id="container"></div>
     <script id="glossary-item" type="text/x-handlebars-template">
       <div class="glossary-item">
-        <span class="english-text">{{english}}</span><!--
+        <span
+          class="english-text"
+        >{{english}}</span><!--
           remove space
-        --><span class="chinese-text">{{chinese}}</span>
+        --><span
+          class="chinese-text"
+        >{{chinese}}</span>
       </div>
     </script>
     <script src="../assets/handlebars.min-v4.5.1.js"></script>
@@ -62,17 +66,17 @@
 
       window
         .fetch("./glossary.json", {})
-        .then(function(result) {
+        .then(function (result) {
           return result.json();
         })
-        .then(function(glossaries) {
+        .then(function (glossaries) {
           var html = [];
-          glossaries.forEach(function(glossary) {
+          glossaries.forEach(function (glossary) {
             html.push(template(glossary));
           });
           return html;
         })
-        .then(function(html) {
+        .then(function (html) {
           document.getElementById("container").innerHTML = html.join("");
         });
     </script>
